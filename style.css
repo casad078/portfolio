@@ -24,6 +24,7 @@
 
 body {
   background-color: #F2EEEC;
+  overflow: hidden;
 }
 
 
@@ -51,6 +52,27 @@ nav a {
 
 nav button{
   border: none;
+}
+
+.background {
+  opacity: 90%;
+  display: none;
+}
+
+#imgone img {
+  width: 35%;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  z-index: -1;
+}
+
+#imgtwo img {
+  width: 90%;
+  position: absolute;
+  left: 0;
+  top: -70px;
+  z-index: -1;
 }
 
 .dropdown {
@@ -118,10 +140,11 @@ nav a:hover, nav button:hover {
 }
 
 #logo img {
-  width: 7%;
-  display: block;
-  margin: auto;
-  padding-top: 45px;
+  width: 5%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
 }
 
 #insta img {
@@ -130,3 +153,55 @@ nav a:hover, nav button:hover {
   margin: auto;
 }
 
+#title h2 {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -2px;
+  font-size: 20px;
+}
+
+#title {
+  display: flex;
+  position: absolute;
+  top: 30%;
+  margin-right: 25%;
+  margin-left: 10%;
+  gap: 100%;
+  margin-top: -300px;
+}
+
+.background-container {
+  position: absolute;
+  width: 50%; /* Adjust as needed */
+  height: 50%; /* Adjust as needed */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: -1;
+}
+
+#background-container-1 {
+  top: 35%; /* Adjust as needed */
+  left: 58%; /* Adjust as needed */
+}
+
+#background-container-2 {
+  top: 35%; /* Adjust as needed */
+  right: 58%; /* Adjust as needed */
+}
+
+.background-image {
+  width: 50%; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.background-image.visible {
+  opacity: 1;
+}
