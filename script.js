@@ -1,22 +1,77 @@
-// Function to set a random background image
-function setRandomBackground(containerId) {
-    const container = document.getElementById(containerId);
-    const images = container.querySelectorAll('.background-image');
-    
-    // Hide all images
-    images.forEach(img => img.classList.remove('visible'));
+// Theme toggle
+document.getElementById("theme-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 
-    // Get a random index
-    const randomIndex = Math.floor(Math.random() * images.length);
+  // Change icon
+  const btn = document.getElementById("theme-toggle");
+  btn.textContent = document.body.classList.contains("dark-mode") ? "[{Light}]" : "[{Dark}]";
+});
 
-    // Show the random image
-    images[randomIndex].classList.add('visible');
-}
 
-// Set an interval to change the background for both containers
-setInterval(() => setRandomBackground('background-container-1'), 800);
-setInterval(() => setRandomBackground('background-container-2'), 800);
 
-// Optionally, set an initial background image for both containers
-setRandomBackground('background-container-1');
-setRandomBackground('background-container-2');
+
+document.querySelectorAll('.dropdown-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const dropdown = btn.parentElement;
+    const content = dropdown.querySelector('.dropdown-content');
+
+    // Toggle open
+    dropdown.classList.toggle('open');
+
+    if (dropdown.classList.contains('open')) {
+      // Auto-expand to full height
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      // Collapse
+      content.style.maxHeight = 0;
+    }
+  });
+});
+
+
+// Open modules when clicking an item
+document.querySelectorAll('.dropdown-content .item').forEach(item => {
+  item.addEventListener('click', () => {
+
+    // ----- Slide-in module (item1) -----
+    const target1 = item.dataset.target;
+    if (target1) {
+      document.querySelectorAll('.item1 .module.active').forEach(m => m.classList.remove('active'));
+      document.getElementById(target1).classList.add('active');
+    }
+
+    // ----- Fade module (item2) -----
+    const target2 = item.dataset.target2;
+    if (target2) {
+      document.querySelectorAll('.item2 .item2-module.active').forEach(m => m.classList.remove('active'));
+      document.getElementById(target2).classList.add('active');
+    }
+  });
+});
+
+// Back button closes both
+document.querySelectorAll('.item1 .back-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.item1 .module.active').forEach(m => m.classList.remove('active'));
+    document.querySelectorAll('.item2 .item2-module.active').forEach(m => m.classList.remove('active'));
+  });
+});
+
+
+const preview = document.getElementById("hover-preview");
+
+document.querySelectorAll(".dropdown-content .item").forEach(item => {
+  
+  item.addEventListener("mouseenter", () => {
+    const img = item.getAttribute("data-img");
+    if (!img) return;
+
+    preview.src = img;
+    preview.style.display = "block";
+  });
+
+  item.addEventListener("mouseleave", () => {
+    preview.style.display = "none";
+  });
+
+});

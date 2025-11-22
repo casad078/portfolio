@@ -4,74 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+</style>
     <script defer src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Artist</title>
+    <title>Danielle Casado</title>
 </head>
 <body>
 
-    <div class="background-container" id="background-container-1">
-        <img src="img18.png" class="background-image">
-        <img src="img19.png" class="background-image">
-        <img src="img23.png" class="background-image">
-        <img src="img24.png" class="background-image">
-        <img src="me.png" class="background-image">
+<!--Projects: reink motion, tarot book/web/motion, witch book, zine, interacttion site, garabato, etc., anything motion -->
+
+<div class="container">
+    <div class="item1">
+         <div class="dropdown" id="first">
+    <button class="dropdown-btn" id="name">[{D.C.}]</button> 
+    <div class="dropdown-content" id="dropdown-contentone">
+      <div class="itemnone">Dani3ll3 Casad0 is a graphic designer and artist based on NYC. They are currently a thesis student at Parsons School of Design in the Communication Design Program.</div>
+    <div id="contact">[{contact}]</div> 
     </div>
-    <div class="background-container" id="background-container-2">
-        <img src="img26.png" class="background-image">
-        <img src="img27.png" class="background-image">
-        <img src="img30.png" class="background-image">
-        <img src="img41.png" class="background-image">
-        <img src="img56.png" class="background-image">
+  </div>
+        <nav>
+       <div class="dropdowns">
+          <div class="dropdown">
+    <button class="dropdown-btn">Print</button>
+    <div class="dropdown-content">
+      <div class="item" data-target="module1"  data-img="./media/witchbook.png" data-target2="module1-2">A Visual History of the Designed Witch</div>
+      <div class="item">Printing Divinity</div>
+      <div class="item">Reink</div>
+      <div class="item">First Things First, Second, And Third</div>
+      <div class="item">Garabato</div>
+      <div class="item">Mindf*ck</div>
+      <div class="item">Where is my mind?</div>
+      <div class="item">Horror Wiki</div>
+      <div class="item">Poster Series</div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Web</button>
+    <div class="dropdown-content">
+      <div class="item">Core Interaction 2</div>
+      <div class="item">On Beginnings</div>
+      <div class="item">Wall: A Collection of Sentiment</div>
+      <div class="item">Time: nature's night light</div>
+      <div class="item">Get Your Cards Together</div>
+      <div class="item">Mindf*ck</div>
+      <div class="item">Healing Wounds</div>
+      <div class="item">A PERSONAL INVENTORY VISUALIZED</div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Motion</button>
+    <div class="dropdown-content">
+      <div class="item">Pinball</div>
+      <div class="item">Typeface Showcase: Hagrid</div>
+      <div class="item">Reink</div>
+      <div class="item">Anti-Positional</div>
+      <div class="item">Spoon Music Video</div>
+    </div>
+  </div>
+
+   <div class="dropdown">
+    <button class="dropdown-btn">Brand</button>
+    <div class="dropdown-content">
+      <div class="item">Pinball</div>
+      <div class="item">tinypallets</div>
+      <div class="item">PearlJam</div>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <button class="dropdown-btn">Illustration</button>
+    <div class="dropdown-content">
+      <div class="item">Animation</div>
+      <div class="item">Concept Art</div>
+      <div class="item">Prints</div>
+      <div class="item">Children's Book</div>
+    </div>
+  </div>
+
+</div>
+        </nav>
+  <div id="module1" class="module">
+    <button class="back-btn">Back</button>
+    <h1>A Visual History of the Designed Witch</h1>
+    <p>Module content goes here...</p>
+  </div>
+
     </div>
 
-    <div class="background">
-        <div id="imgone">
-        <img src="Ellipse 1.png">
+
+    <div class="item2">
+<img id="hover-preview" />
+        
+ <div id="module1-2" class="item2-module">
+    <iframe src="https://drive.google.com/file/d/1l9PHzLvLqKnW_IHoIfsv8OZnK8cRfpY-/preview" width="640" height="480" allow="autoplay"></iframe>
+    <img src="./media/daniimg031.jpg" />
+    <img src="./media/daniimg032.jpg" />
+    <img src="./media/daniimg047.jpg" />
+    </div>
         </div>
-        <div id="imgtwo">
-            <img src="Ellipse 2 (1).png">
-        </div>
-    </div>
 
-    <nav>
-        <a id="artist-button" href="#">ARTIST</a>
-        <div class="dropdown">
-        <button id="projects-button" >PROJECTS</button>
-        <div class="dropdown-content">
-            <a href="#">WEB DESIGN</a>
-            <a href="#">BOOK DESIGN</a>
-            <a href="#">BRANDING</a>
-            <a href="#">ILLUSTRATION</a>
-            <a href="#">POSTER DESIGN</a>
-          </div>
-          </div>
-        <a id="contact-button" href="#">CONTACT</a>
-        <a id="foundry-button" href="#">FOUNDRY</a>
-    </nav>
+    
 
-    <div id="name">
-        <h1>DANIELLE<br>CASADO</h1>
-    </div>
+</div>
 
-    <section id="bio">
-        <p>dani is a latinx graphic designer based in new york. they study communication design at the new school. you can usually find them coding, making random poster collages, or ranting about how much they  hate le corbusier. stop by, say hi. </p>
-    </section>
+<button id="theme-toggle">[{Dark}]</button>
 
-    <div id="logo">
-        <img src="logo.png">
-    </div>
-
-    <div id="title">
-        <h2>DESIGNER</h2>
-        <h2>ARTIST</h2>
-    </div>
-
-<!-- 
-    <div id="insta">
-        <a href="https://www.instagram.com/artffae/"><img src="Group 3.png"></a>
-    </div> -->
 </body>
 </html>
