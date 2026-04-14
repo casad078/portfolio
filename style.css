@@ -1,37 +1,16 @@
 body {
   background-color: white;
   color: black;
-  overflow: hidden;
-  transition: background 0.3s, color 0.3s;
+   height: 100%;
+  margin: 0;
+    display: flex;
+  flex-direction: column;
 }
 
-body.dark-mode {
-  background: black;
-  color: white;
-}
-
-body.dark-mode * {
-  color: inherit !important;
-  background-color: transparent !important;
-}
-
-/* Toggle button styling */
-#theme-toggle {
-  position: fixed;
-  bottom: 1vh;
-  right: 1vh;
-  padding: 20px 50px;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  background: transparent;
-  z-index: 999;
-}
-
-body.dark-mode #theme-toggle {
-  color: white;
-}
-
+.Jetsam Collection Basilea {
+font-family: "jetsam-collection-basilea", sans-serif;
+font-weight: 400;
+font-style: normal; }
 
 .dm-sans {
   font-family: "DM Sans", sans-serif;
@@ -43,202 +22,51 @@ body.dark-mode #theme-toggle {
 * {
   color: black;
   font-family: "DM Sans";
-  font-size: 60px;
+  font-size: 55px;
   text-align: left;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr;
-  gap: 20px;
-  height: 100vh;
-  margin-top: -8px;
-}
-
-.item1 {
-  /* background-color: blue; */
-  grid-column-start: 1;
-  grid-column-end: 3;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  padding-left: 15px;
-   position: relative;
-   padding-bottom: 50px;
-   padding-top: 20px;
-}
-
-.item2 {
-  /* background-color: red; */
-  grid-column-start: 3;
-  grid-column-end: 7;
-  margin-right: -10px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+.text {
   position: relative;
-  display: flex;              /* enable flexbox */
-  justify-content: center;    /* center horizontally */
-  align-items: center; 
-}
-
-
-.dropdowns {
-  width: 260px;
-}
-
-.dropdown {
-  font-family: sans-serif;
-}
-
-.dropdown-btn {
-  width: 100%;
-  background-color: transparent;
-  padding: 12px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Start closed */
-.dropdown-content {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.25s ease;
-  border: none;
-  min-width: 200%;
-}
-
-#dropdown-contentone {
-  min-width: 100%;
-}
-
-/* When open */
-.dropdown.open .dropdown-content {
-  opacity: 1;
-}
-
-/* Items */
-.item, .itemnone {
+  margin-right: 30%;
+  margin-top: -5%;
+  margin-left: 1%;
   padding: 10px;
-  background: transparent;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 40px;
+
 }
 
-.item {
-  margin-right: 60px;
+span {
+  font-family: "jetsam-collection-basilea", sans-serif;
+  font-size: 100px;
+  display: inline-block; 
+  vertical-align: bottom; 
+  line-height: 1;
 }
 
-.itemnone {
-  font-size: 48px;
-  cursor: crosshair;
-}
-
-.item:hover {
-  font-style: italic;
-}
-
-#contact {
-  font-size: 30px;
-  text-decoration: underline;
-}
-
-#contact:hover {
-  font-style: italic;
-  cursor: pointer;
-}
-
-
-/* Modules overlay with slide animation */
-.module {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: -100%; /* Start off-screen to the left */
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  color:black;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
-  z-index: 10;
-  transition: left 0.5s ease, background-color 0.3s, color 0.3s;
-}
-
-/* When module is active, slide it in */
-.module.active {
+.links {
   display: block;
-  left: 0;
-}
-
-/* Back button */
-.back-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 10px 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-body.dark-mode .module.active {
-  background-color: black;
-  color: white;
-  z-index: 10;
-}
-
-body.dark-mode .back-btn {
-  color: white;
-  border-color: white;
-}
-
-
-
-#hover-preview {
-  object-fit: cover;
-  display: none;
-  width: 100vw;        /* full viewport width */
-  height: 100vh;       /* full viewport height */ /* keep proportions without cropping */
-  background: black;   /* optional: looks like a gallery */
-  display: none;
-  z-index: 9999;
-}
-
-/* ITEM2 MODULE - fills entire item2 */
-/* Fade modules (item2) */
-.item2-module {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background: var(--module-bg);
-  color: var(--module-fg);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  z-index: 40;
-  overflow-y: scroll;
-}
-.item2-module.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Image styling in item2 */
-.item2-module img {
+  position: relative;
+  align-items: baseline;
+    position: fixed;
+  bottom: 0;
   width: 100%;
-  max-width: 100%;
-  display: block;
-  margin-bottom: 20px;
+   flex: 1;
+   padding: 20px;
 }
 
-iframe {
-  border: none;
-  width: 100%;
-  object-fit: contain;
+a {
+  font-size: 50px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  font-family: "jetsam-collection-basilea", sans-serif;
+  color: red;
+}
+
+@media (min-width: 600px) {
+  .text {
+    font-size: 30px;
+  }
 }
