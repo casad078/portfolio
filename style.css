@@ -1,10 +1,12 @@
 body {
   background-color: white;
   color: black;
-   height: 100%;
+  height: 100%;
   margin: 0;
-    display: flex;
+  display: flex;
   flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .Jetsam-Collection-Basilea {
@@ -12,124 +14,88 @@ font-family: "jetsam-collection-basilea", sans-serif;
 font-weight: 400;
 font-style: normal; }
 
-.dm-sans {
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  /* font-weight: <weight>;  Use a value from 100 to 1000 */
-  font-style: normal;
-}
-
-* {
-  color: black;
-  font-family: "DM Sans";
-  font-size: 55px;
-  text-align: left;
-   z-index: 2;
-}
-
-.text {
+.background {
   position: relative;
-  margin-right: 30%;
-  margin-top: -5%;
-  margin-left: 1%;
-  padding: 10px;
 }
 
-span {
-  font-family: "jetsam-collection-basilea", sans-serif;
-  font-size: 100px;
-  display: inline-block; 
-  vertical-align: bottom; 
-  line-height: 1;
+.castillo {
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  z-index: 2;
+  margin: 0;
 }
 
-.links {
-  display: block;
-  position: relative;
-  align-items: baseline;
-    position: fixed;
-  bottom: 0;
+.background img {
   width: 100%;
-   flex: 1;
-   padding: 20px;
 }
 
-a {
-  font-size: 50px;
-  padding-right: 20px;
+.castillo img {
+  width: 100%;
+}
+
+
+/* Container rules to ensure full visibility */
+nav {
+  width: 100%;
+  z-index: 3;
+  position: absolute;
+}
+
+/* Flexbox implementation on the parent list */
+nav ul {
+  display: flex;
+  justify-content: space-between; 
+  list-style-type: none;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0;
+}
+
+/* Optional helper styles for clickable anchor areas */
+nav li a {
+  font-family: jetsam-collection-basilea;
+  font-size: 30px;
+  display: block;
+  padding: 15px 20px;
   text-decoration: none;
+  color: aliceblue;
 }
 
-a:hover {
-  font-family: "jetsam-collection-basilea", sans-serif;
+nav li a:hover {
   color: red;
 }
 
-img {
-  width: 40%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  padding: 50px;
+.marquee-container {
+  width: 100%;
+  overflow: hidden; /* Hides text outside the box */
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 3;
+  top: 80vh;
+  color: aliceblue;
+  background-color: red;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.under p {
-  color: magenta;
-  font-size: 12px;
-  width: 10%;
-  position: fixed;
-  right: 0;
-  bottom: 50%;
-  padding-right: 3%;
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%; /* Starts the text off-screen to the right */
+  animation: marquee 15s linear infinite;
 }
 
-@media (max-width: 768px) {
-  
-  body {
-    overflow-x: hidden;
+/* Keyframe rules to move text from right to left */
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+/* Respect user device preferences to pause motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-text {
+    animation-play-state: paused;
   }
-
-  * {
-    font-size: 30px;
-  }
-  
-  .text {
-  display: block;
-  position: relative;
-  padding: 20px;
-  margin-right: 10px;
-}
-
-.under p {
-  display: flexbox;
-  position: relative;
-  margin-left: 50%;
-  width: 40%;
-  font-size: 10px;
-}
-
-img {
-  width: 50%;
- display: flex;
- right: 0;
- bottom: 0;
- padding: 5px;
-}
-
-.links {
-  width: 50%;
-  bottom: 0;
-  left: 0;
-}
-
-a {
-  display: block;
-  text-decoration: none;
-  font-size: 30px;
-}
-
-span {
-  font-size: 50px;
-}
 }
